@@ -28,6 +28,9 @@ function HootDetails() {
           <p>{hoot.text}</p>
           <p> <b>Category:</b> {hoot.category} </p>
           <p> <b>Created By:</b> {hoot.author.username} </p>
+
+          <h3>Comments</h3>
+          
       </>) : null}
     </div>
   )
