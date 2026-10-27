@@ -17,6 +17,9 @@ function HootDetails() {
     event.preventDefault()
 
     createComment(hootId,formData)
+    loadHoot() // This re fetches the hoot with the updated comment
+    setFormData({text:''})
+
   }
 
   const { hootId } = useParams() // Getting the dynamic id for the hoot so I can call the api with this id to get the full hoot
