@@ -16,7 +16,7 @@ function HootDetails() {
   function handleSubmit(event){
     event.preventDefault()
 
-    createComment(formData)
+    createComment(hootId,formData)
   }
 
   const { hootId } = useParams() // Getting the dynamic id for the hoot so I can call the api with this id to get the full hoot
