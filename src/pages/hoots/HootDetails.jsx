@@ -8,10 +8,28 @@ function HootDetails() {
 
   const { hootId } = useParams() // Getting the dynamic id for the hoot so I can call the api with this id to get the full hoot
 
-  
+  async function loadHoot(){
+    const response = await getHootById(hootId)
+    setHoot(response.hoot)
+    setComments(response.comments)
+  }
+
+  useEffect(()=>{
+    loadHoot()
+  },[])
 
   return (
-    <div>HootDetails</div>
+    <div>
+      <h1>Hoot Details</h1>
+
+      {hoot ? (
+        <>
+          <h2>{hoot.title}</h2>
+          <p>{hoot.text}</p>
+          <p> <b>Category:</b> {hoot.category} </p>
+          <p> <b>Created By:</b> {hoot.author.username} </p>
+      </>) : null}
+    </div>
   )
 }
 
