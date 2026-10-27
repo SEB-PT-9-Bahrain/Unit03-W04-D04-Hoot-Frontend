@@ -42,9 +42,9 @@ function App() {
           element={user ? <Dashboard user={user} /> : <Navigate to="/sign-in" />}
         />
 
-        <Route path="/hoots" element={ user ? <AllHoots/> : <Navigate to="/sign-in" />} />
+        <Route path="/hoots" element={ user ? <AllHoots user={user}/> : <Navigate to="/sign-in" />} />
         <Route path="/hoots/create" element={ user ? <CreateHoot/> : <Navigate to="/sign-in" />} />
-        <Route path="/hoots/:hootId" element={ user ? <HootDetails/> : <Navigate to="/sign-in" />} />
+        <Route path="/hoots/:hootId"element={ user ? <HootDetails  user={user}/> : <Navigate to="/sign-in" />} />
         <Route path="/hoots/:hootId/edit" element={user ? <EditHoot/> : <Navigate to="/sign-in" />} />
       </Routes>
     </div>

@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router"
+import { Link, useParams, useNavigate } from "react-router"
 import { getHootById, createComment } from "../../services/hootService"
 
-function HootDetails() {
+function HootDetails({user}) {
   const [ hoot, setHoot ] = useState(null)
   const [ comments, setComments] = useState([])
   const [ formData, setFormData ] = useState({
     text:''
   })
+
+
+
+  const navigate = useNavigate()
 
   function handleChange(event){
     setFormData({...formData, [event.target.name]:event.target.value})
@@ -44,6 +48,10 @@ function HootDetails() {
           <p>{hoot.text}</p>
           <p> <b>Category:</b> {hoot.category} </p>
           <p> <b>Created By:</b> {hoot.author.username} </p>
+
+          {user._id ==  hoot.author._id ? (<><button onClick={() => navigate(`/hoots/${hoot._id}/edit`)}>Edit Hoot</button>
+          <button>Delete Hoot</button>
+          </>) : <></>}
 
           <h3>Comments</h3>
 

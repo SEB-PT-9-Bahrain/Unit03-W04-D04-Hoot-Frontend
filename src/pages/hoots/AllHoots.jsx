@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router"
 import { getAllHoots } from "../../services/hootService"
 
-function AllHoots() {
+function AllHoots({user}) {
+  console.log(user)
   const [ hoots, setHoots ] = useState([])
 
   async function loadHoots(){
