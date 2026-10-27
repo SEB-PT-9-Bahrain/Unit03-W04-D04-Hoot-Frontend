@@ -22,7 +22,7 @@ function AllHoots() {
       {hoots.map((oneHoot)=>
       <div key={oneHoot._id}>
         <h2>{oneHoot.title}</h2>
-        
+        <Link to={`/hoots/${oneHoot._id}`}>See Hoot</Link>
       </div>
       )}
     </div>
