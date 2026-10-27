@@ -30,7 +30,12 @@ function HootDetails() {
           <p> <b>Created By:</b> {hoot.author.username} </p>
 
           <h3>Comments</h3>
-          
+          {comments.map((oneComment)=>
+          <div>
+            <p>{oneComment.text}</p>
+            <p> <b>By:</b> {oneComment.author.username} </p>
+          </div>
+          )}
       </>) : null}
     </div>
   )
