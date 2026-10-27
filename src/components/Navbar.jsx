@@ -8,6 +8,8 @@ function Navbar({ user, handleLogout }) {
       ? 
       (<>
         <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/hoots'>All Hoots</Link>
+        <Link to='/hoots/create'>Create Hoots</Link>
       <button onClick={handleLogout}>Sign Out</button>
       </>) : 
       (<>
