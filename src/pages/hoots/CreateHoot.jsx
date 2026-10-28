@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { createNewHoot } from "../../services/hootService";
 import { useNavigate } from "react-router";
+import styles from './CreateHoot.module.css'
+
 function CreateHoot() {
   const [formData, setFormData] = useState({
     title:"",
@@ -26,7 +28,7 @@ function CreateHoot() {
     }
   return (
     <div>
-      <h1>Create Hoot</h1>
+      <h1 className={styles.main}>Create Hoot</h1>
       <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title: </label>
             <input 

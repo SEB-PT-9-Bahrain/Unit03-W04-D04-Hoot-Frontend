@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router"
 import { getAllHoots } from "../../services/hootService"
+import styles from './AllHoots.module.css'
 
 function AllHoots({user}) {
   console.log(user)
@@ -18,7 +19,7 @@ function AllHoots({user}) {
 
   return (
     <div>
-      <h1>All Hoots</h1>
+      <h1 className={styles.main}>All Hoots</h1>
 
       {hoots.map((oneHoot)=>
       <div key={oneHoot._id}>

@@ -7,10 +7,10 @@ import SignInPage from "./pages/SigninPage";
 import Dashboard from "./pages/Dashboard";
 import { logout } from "./services/authService";
 
-import CreateHoot from "./pages/hoots/CreateHoot";
 import AllHoots from "./pages/hoots/AllHoots";
 import HootDetails from "./pages/hoots/HootDetails";
 import EditHoot from "./pages/hoots/EditHoot";
+import CreateHoot from "./pages/hoots/CreateHoot";
 
 
 function App() {
