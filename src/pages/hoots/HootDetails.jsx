@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router"
-import { getHootById, createComment } from "../../services/hootService"
+import { getHootById, createComment, deleteHootById } from "../../services/hootService"
 
 function HootDetails({user}) {
   const [ hoot, setHoot ] = useState(null)
@@ -34,6 +34,11 @@ function HootDetails({user}) {
     setComments(response.comments)
   }
 
+  async function deleteHoot(){
+    const deletedHoot = await deleteHootById(hootId)
+    navigate('/hoots')
+  }
+
   useEffect(()=>{
     loadHoot()
   },[])
@@ -50,7 +55,7 @@ function HootDetails({user}) {
           <p> <b>Created By:</b> {hoot.author.username} </p>
 
           {user._id ==  hoot.author._id ? (<><button onClick={() => navigate(`/hoots/${hoot._id}/edit`)}>Edit Hoot</button>
-          <button>Delete Hoot</button>
+          <button onClick={deleteHoot}>Delete Hoot</button>
           </>) : <></>}
 
           <h3>Comments</h3>
